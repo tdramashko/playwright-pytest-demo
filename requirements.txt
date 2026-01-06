@@ -1,0 +1,12 @@
+# DemoQA Playwright Test Automation
+
+# Core dependencies
+pytest>=8.0.0
+pytest-playwright>=0.6.0
+pytest-html>=4.0.0
+playwright>=1.40.0
+
+# Installation instructions:
+# 1. Install Python packages: pip install -r requirements.txt
+# 2. Install Playwright browsers: playwright install
+# 3. Run tests: pytest --headed --html=report.html
