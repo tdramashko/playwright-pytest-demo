@@ -27,10 +27,20 @@ A simple Playwright pytest project demonstrating automated UI testing on [demoqa
 - Search functionality
 - Table data validation
 
-## Project Structure
-
-```
-Python-demo/
+### Accessibility (`test_accessibility.py`)
+- Page title and heading hierarchy
+- Form labels and ARIA attributes
+- Keyboard navigation and focus management
+- Color contrast and semantic HTML
+- Accessibility tree validatio # Text box form tests
+│   ├── test_buttons.py        # Button interaction tests
+│   ├── test_web_tables.py     # Web table CRUD tests
+│   └── test_accessibility.py  # Accessibility & a11y tests
+├── pages/
+│   ├── text_box_page.py       # Text box page object
+│   ├── buttons_page.py        # Buttons page object
+│   ├── web_tables_page.py     # Web tables page object
+│   └── accessibility_page.py  # Accessibility
 ├── tests/
 │   ├── test_text_box.py      # Text box form tests
 │   ├── test_buttons.py        # Button interaction tests
