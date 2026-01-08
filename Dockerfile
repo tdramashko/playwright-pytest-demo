@@ -48,11 +48,8 @@ COPY . .
 # Create directories for outputs if they don't exist
 RUN mkdir -p screenshots reports
 
-# Update pytest.ini to remove --headed flag for Docker (headless by default)
-RUN sed -i 's/--headed//g' pytest.ini && sed -i 's/--slowmo=500//g' pytest.ini
-
 # Set environment variables
 ENV PYTHONUNBUFFERED=1
 
-# Default command to run tests (headless mode is default without --headed flag)
-CMD ["pytest", "--html=report.html", "--self-contained-html"]
+# Default command to run tests using CI config (headless mode)
+CMD ["pytest", "-c", "pytest-ci.ini", "--html=report.html", "--self-contained-html"]
