@@ -41,6 +41,8 @@ class ResponsivePage:
     def navigate_to_buttons(self):
         """Navigate to buttons page."""
         self.page.goto(self.buttons_url, wait_until="domcontentloaded")
+        
+    def is_element_visible(self, selector: str) -> bool:
         """Check if element is visible in viewport."""
         element = self.page.locator(selector)
         return element.is_visible()
