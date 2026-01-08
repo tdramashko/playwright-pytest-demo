@@ -7,7 +7,7 @@ services:
     volumes:
       # Mount volumes to preserve test outputs
       - ./screenshots:/app/screenshots
-      - ./report.html:/app/report.html
+      - ./reports:/app/reports
     environment:
       - PYTHONUNBUFFERED=1
     # Override command if needed (tests run in headless mode by default)

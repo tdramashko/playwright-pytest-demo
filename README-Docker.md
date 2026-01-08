@@ -32,7 +32,7 @@ docker build -t playwright-tests .
 
 Run all tests:
 ```bash
-docker run --rm -v ${PWD}/screenshots:/app/screenshots -v ${PWD}/report.html:/app/report.html playwright-tests
+docker run --rm -v ${PWD}/screenshots:/app/screenshots -v ${PWD}/reports:/app/reports playwright-tests
 ```
 
 Run specific test file:
@@ -48,7 +48,7 @@ docker run --rm playwright-tests pytest tests/ --browser firefox
 ## Accessing Test Results
 
 After running tests, you can access:
-- **HTML Report**: `report.html` in your project directory
+- **HTML Report**: `reports/report.html` in your project directory
 - **Screenshots**: In the `screenshots/` directory (for failed tests)
 
 ## Advanced Usage
