@@ -55,11 +55,10 @@ jobs:
           pytest tests/ \
             -c pytest-ci.ini \
             --browser=${{ matrix.browser }} \
-            --numprocesses=auto \
             --html=report-${{ matrix.browser }}.html \
             --self-contained-html \
             --base-url=https://demoqa.com
-        timeout-minutes: 15
+        timeout-minutes: 20
         continue-on-error: false
 
       - name: Upload test report
@@ -76,4 +75,12 @@ jobs:
         with:
           name: screenshots-${{ matrix.browser }}
           path: screenshots/
+          retention-days: 30
+
+      - name: Upload videos
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: videos-${{ matrix.browser }}
+          path: test-results/
           retention-days: 30
